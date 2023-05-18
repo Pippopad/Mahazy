@@ -47,5 +47,49 @@ namespace Mahazy
         {
             clicked = false;
         }
+
+        private void Control_MouseEnter(object sender, EventArgs e)
+        {
+            string senderName = (sender as Control).Name;
+
+            Color btnCloseColor = Color.FromName("Red");
+            Color btnMinimizeColor = Color.FromName("Lime");
+
+            switch (senderName)
+            {
+                case "picBtnClose":
+                    picBtnClose.BackColor = btnCloseColor;
+                    break;
+                case "picBtnMinimize":
+                    picBtnMinimize.BackColor = btnMinimizeColor;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Control_MouseLeave(object sender, EventArgs e)
+        {
+            Color btnDefaultColor = Color.FromName("LightGray");
+
+            (sender as Control).BackColor = btnDefaultColor;
+        }
+
+        private void Control_Click(object sender, EventArgs e)
+        {
+            string senderName = (sender as Control).Name;
+
+            switch (senderName)
+            {
+                case "picBtnClose":
+                    Application.Exit();
+                    break;
+                case "picBtnMinimize":
+                    this.WindowState = FormWindowState.Minimized;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
