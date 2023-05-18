@@ -52,6 +52,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Amico.cs" />
+    <Compile Include="Models\Ordina.cs" />
+    <Compile Include="Models\Prodotto.cs" />
+    <Compile Include="Models\Recensione.cs" />
+    <Compile Include="Models\Utente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
