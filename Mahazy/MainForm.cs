@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahazy.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,8 @@ namespace Mahazy
             InitializeComponent();
 
             this.clicked = false;
+
+            SetActiveForm(new LoginView());
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -90,6 +93,13 @@ namespace Mahazy
                 default:
                     break;
             }
+        }
+
+        private void SetActiveForm(Form form)
+        {
+            form.TopLevel = false;
+            pnlViewLoader.Controls.Add(form);
+            form.Show();
         }
     }
 }
