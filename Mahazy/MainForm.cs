@@ -1,4 +1,5 @@
-﻿using Mahazy.Views;
+﻿using Mahazy.DBContext;
+using Mahazy.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +16,27 @@ namespace Mahazy
 {
     public partial class MainForm : Form
     {
+        public struct DatabaseContext
+        {
+            public DBUtente Utente { get; set; }
+        }
+
         private Point startPoint;
         private bool clicked;
+
+        private DatabaseContext ctx;
 
         public MainForm()
         {
             InitializeComponent();
 
             this.clicked = false;
+            this.ctx = new DatabaseContext()
+            {
+                Utente = new DBUtente(Utils.CONNECTION_STRING),
+            };
 
-            SetActiveForm(new LoginView());
+            SetActiveForm(new LoginView(ctx));
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
