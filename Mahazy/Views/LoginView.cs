@@ -91,10 +91,22 @@ namespace Mahazy.Views
                 FocusControl(txtNameSignUp);
                 return;
             }
+            if (!Utils.CheckStringMaxLength(name, 64))
+            {
+                Utils.ShowError("Il nome non deve superare i 64 caratteri!");
+                FocusControl(txtNameSignUp);
+                return;
+            }
 
             if (!Utils.IsStringValid(surname))
             {
                 Utils.ShowError("Inserisci il tuo cognome!");
+                FocusControl(txtSurnameSignUp);
+                return;
+            }
+            if (!Utils.CheckStringMaxLength(surname, 64))
+            {
+                Utils.ShowError("Il cognome non deve superare i 64 caratteri!");
                 FocusControl(txtSurnameSignUp);
                 return;
             }
@@ -105,6 +117,12 @@ namespace Mahazy.Views
                 FocusControl(txtUsernameSignUp);
                 return;
             }
+            if (!Utils.CheckStringLength(username, 3, 64))
+            {
+                Utils.ShowError("L'username può avere dai 3 ai 64 caratteri!");
+                FocusControl(txtUsernameSignUp);
+                return;
+            }
 
             if (!Utils.IsStringValid(password))
             {
@@ -112,6 +130,14 @@ namespace Mahazy.Views
                 FocusControl(txtPasswordSignUp);
                 return;
             }
+            if (!Utils.CheckStringMinLength(name, 3))
+            {
+                Utils.ShowError("La password deve avere più di 3 caratteri!");
+                FocusControl(txtPasswordSignUp);
+                return;
+            }
+
+            /////////////////////
 
             if (ctx.Utente.GetUtente(new Utente() { Username = username }) != null)
             {

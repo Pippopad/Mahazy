@@ -72,7 +72,7 @@
             this.btnShowLogin.Location = new System.Drawing.Point(319, 211);
             this.btnShowLogin.Name = "btnShowLogin";
             this.btnShowLogin.Size = new System.Drawing.Size(53, 23);
-            this.btnShowLogin.TabIndex = 6;
+            this.btnShowLogin.TabIndex = 3;
             this.btnShowLogin.Text = "Mostra";
             this.btnShowLogin.UseVisualStyleBackColor = true;
             this.btnShowLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseDown);
@@ -84,7 +84,7 @@
             this.btnLogin.Location = new System.Drawing.Point(238, 237);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -94,7 +94,7 @@
             this.txtPasswordLogin.Location = new System.Drawing.Point(177, 211);
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.Size = new System.Drawing.Size(136, 20);
-            this.txtPasswordLogin.TabIndex = 4;
+            this.txtPasswordLogin.TabIndex = 2;
             this.txtPasswordLogin.UseSystemPasswordChar = true;
             // 
             // txtUsernameLogin
@@ -102,7 +102,7 @@
             this.txtUsernameLogin.Location = new System.Drawing.Point(177, 180);
             this.txtUsernameLogin.Name = "txtUsernameLogin";
             this.txtUsernameLogin.Size = new System.Drawing.Size(136, 20);
-            this.txtUsernameLogin.TabIndex = 3;
+            this.txtUsernameLogin.TabIndex = 1;
             // 
             // label3
             // 
@@ -143,7 +143,7 @@
             this.btnSignUp.Location = new System.Drawing.Point(682, 282);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(75, 23);
-            this.btnSignUp.TabIndex = 11;
+            this.btnSignUp.TabIndex = 10;
             this.btnSignUp.Text = "Sign up";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
@@ -153,7 +153,7 @@
             this.txtPasswordSignUp.Location = new System.Drawing.Point(621, 256);
             this.txtPasswordSignUp.Name = "txtPasswordSignUp";
             this.txtPasswordSignUp.Size = new System.Drawing.Size(136, 20);
-            this.txtPasswordSignUp.TabIndex = 10;
+            this.txtPasswordSignUp.TabIndex = 8;
             this.txtPasswordSignUp.UseSystemPasswordChar = true;
             // 
             // txtUsernameSignUp
@@ -161,7 +161,7 @@
             this.txtUsernameSignUp.Location = new System.Drawing.Point(621, 230);
             this.txtUsernameSignUp.Name = "txtUsernameSignUp";
             this.txtUsernameSignUp.Size = new System.Drawing.Size(136, 20);
-            this.txtUsernameSignUp.TabIndex = 9;
+            this.txtUsernameSignUp.TabIndex = 7;
             // 
             // label4
             // 
@@ -202,7 +202,7 @@
             this.btnShowJoinUs.Location = new System.Drawing.Point(763, 254);
             this.btnShowJoinUs.Name = "btnShowJoinUs";
             this.btnShowJoinUs.Size = new System.Drawing.Size(53, 23);
-            this.btnShowJoinUs.TabIndex = 7;
+            this.btnShowJoinUs.TabIndex = 9;
             this.btnShowJoinUs.Text = "Mostra";
             this.btnShowJoinUs.UseVisualStyleBackColor = true;
             this.btnShowJoinUs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseDown);
@@ -213,14 +213,14 @@
             this.txtSurnameSignUp.Location = new System.Drawing.Point(621, 204);
             this.txtSurnameSignUp.Name = "txtSurnameSignUp";
             this.txtSurnameSignUp.Size = new System.Drawing.Size(136, 20);
-            this.txtSurnameSignUp.TabIndex = 15;
+            this.txtSurnameSignUp.TabIndex = 6;
             // 
             // txtNameSignUp
             // 
             this.txtNameSignUp.Location = new System.Drawing.Point(621, 178);
             this.txtNameSignUp.Name = "txtNameSignUp";
             this.txtNameSignUp.Size = new System.Drawing.Size(136, 20);
-            this.txtNameSignUp.TabIndex = 14;
+            this.txtNameSignUp.TabIndex = 5;
             // 
             // label7
             // 

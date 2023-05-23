@@ -28,6 +28,21 @@ namespace Mahazy
             return !string.IsNullOrWhiteSpace(s);
         }
 
+        public static bool CheckStringMinLength(string s, int n)
+        {
+            return s.Length >= n;
+        }
+
+        public static bool CheckStringMaxLength(string s, int n)
+        {
+            return s.Length <= n;
+        }
+
+        public static bool CheckStringLength(string s, int mi, int ma)
+        {
+            return CheckStringMinLength(s, mi) && CheckStringMaxLength(s, ma);
+        }
+
         public static void ShowInfo(string msg)
         {
             MessageBox.Show(msg, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
