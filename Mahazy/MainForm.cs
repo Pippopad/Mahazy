@@ -27,7 +27,7 @@ namespace Mahazy
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             this.startPoint = e.Location;
-            clicked = true;
+            clicked = e.Button == MouseButtons.Left || clicked;
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)
@@ -45,7 +45,7 @@ namespace Mahazy
 
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
         {
-            clicked = false;
+            clicked = e.Button != MouseButtons.Left && clicked;
         }
 
         private void Control_MouseEnter(object sender, EventArgs e)

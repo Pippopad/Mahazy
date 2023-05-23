@@ -32,6 +32,7 @@
             this.picBtnMinimize = new System.Windows.Forms.PictureBox();
             this.picBtnClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlViewLoader = new System.Windows.Forms.Panel();
             this.pnlTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBtnClose)).BeginInit();
@@ -92,11 +93,23 @@
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
+            // pnlViewLoader
+            // 
+            this.pnlViewLoader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlViewLoader.BackColor = System.Drawing.Color.LightGray;
+            this.pnlViewLoader.Location = new System.Drawing.Point(0, 36);
+            this.pnlViewLoader.Name = "pnlViewLoader";
+            this.pnlViewLoader.Size = new System.Drawing.Size(858, 398);
+            this.pnlViewLoader.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 434);
+            this.Controls.Add(this.pnlViewLoader);
             this.Controls.Add(this.pnlTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -116,6 +129,7 @@
         private System.Windows.Forms.PictureBox picBtnClose;
         private System.Windows.Forms.PictureBox picBtnMinimize;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlViewLoader;
     }
 }
 
