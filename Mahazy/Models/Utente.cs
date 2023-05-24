@@ -13,5 +13,7 @@ namespace Mahazy.Models
         public string Cognome { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        public List<Prodotto> Prodotti { get; set; }
     }
 }
