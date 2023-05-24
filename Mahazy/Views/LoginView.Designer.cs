@@ -47,12 +47,14 @@
             this.txtNameSignUp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.chkKeepMeLogged = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.chkKeepMeLogged);
             this.panel1.Controls.Add(this.btnShowLogin);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPasswordLogin);
@@ -244,6 +246,18 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Nome:";
             // 
+            // chkKeepMeLogged
+            // 
+            this.chkKeepMeLogged.AutoSize = true;
+            this.chkKeepMeLogged.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkKeepMeLogged.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.chkKeepMeLogged.Location = new System.Drawing.Point(85, 240);
+            this.chkKeepMeLogged.Name = "chkKeepMeLogged";
+            this.chkKeepMeLogged.Size = new System.Drawing.Size(129, 20);
+            this.chkKeepMeLogged.TabIndex = 5;
+            this.chkKeepMeLogged.Text = "Salva credenziali";
+            this.chkKeepMeLogged.UseVisualStyleBackColor = true;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,5 +306,6 @@
         private System.Windows.Forms.TextBox txtNameSignUp;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkKeepMeLogged;
     }
 }

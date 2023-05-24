@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Mahazy
 {
@@ -61,6 +63,42 @@ namespace Mahazy
         public static string CompressString(string s, int maxChars)
         {
             return s.Substring(0, maxChars - 3) + "...";
+        }
+
+        public static void CreateCredFile(string username, string password)
+        {
+            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+
+            if (File.Exists(credPath)) File.Delete(credPath);
+
+            using (var sw = new StreamWriter(credPath))
+            {
+                sw.Write($"{username}:{CreateMD5(password)}");
+            }
+        }
+
+        public static void DeleteCredFile()
+        {
+            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+
+            if (File.Exists(credPath)) File.Delete(credPath);
+        }
+
+        public static string ReadCredFile()
+        {
+            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+
+            if (File.Exists(credPath))
+            {
+                string output;
+                using (var sr = new StreamReader(credPath))
+                {
+                    output = sr.ReadToEnd();
+                }
+                return output;
+            }
+
+            return null;
         }
     }
 }

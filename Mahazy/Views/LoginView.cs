@@ -49,8 +49,8 @@ namespace Mahazy.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsernameLogin.Text;
-            string password = txtPasswordLogin.Text;
+            string username = txtUsernameLogin.Text.Trim();
+            string password = txtPasswordLogin.Text.Trim();
 
             if (!Utils.IsStringValid(username))
             {
@@ -67,12 +67,14 @@ namespace Mahazy.Views
             }
 
             Utente u = ctx.Utente.GetUtente(new Utente() { Username = username });
-            if (u == null || u.Password != Utils.CreateMD5(txtPasswordLogin.Text))
+            if (u == null || u.Password != Utils.CreateMD5(password))
             {
                 Utils.ShowError("Utente non trovato!");
                 ClearLoginField();
                 return;
             }
+
+            if (chkKeepMeLogged.Checked) Utils.CreateCredFile(username, password);
 
             Utils.ShowInfo("Loggato!");
             ClearLoginField();
@@ -80,9 +82,9 @@ namespace Mahazy.Views
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            string name = txtNameSignUp.Text;
-            string surname = txtSurnameSignUp.Text;
-            string username = txtUsernameSignUp.Text;
+            string name = txtNameSignUp.Text.Trim();
+            string surname = txtSurnameSignUp.Text.Trim();
+            string username = txtUsernameSignUp.Text.Trim();
             string password = txtPasswordSignUp.Text;
 
             if (!Utils.IsStringValid(name))
@@ -148,8 +150,10 @@ namespace Mahazy.Views
 
             ctx.Utente.AddUtente(new Utente() { Nome = name, Cognome = surname, Username = username, Password = Utils.CreateMD5(password) });
 
-            Utils.ShowInfo("Account creato!");
+            Utils.ShowInfo("Account creato! Ora esegui il login.");
             ClearSignUpField();
+
+            FocusControl(txtUsernameLogin);
         }
 
         private void FocusControl(Control c)
