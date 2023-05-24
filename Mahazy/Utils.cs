@@ -57,5 +57,10 @@ namespace Mahazy
         {
             MessageBox.Show(msg, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static string CompressString(string s, int maxChars)
+        {
+            return s.Substring(0, maxChars - 3) + "...";
+        }
     }
 }

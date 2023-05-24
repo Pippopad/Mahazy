@@ -12,23 +12,27 @@ namespace Mahazy
 {
     public partial class ProductComponent : UserControl
     {
+        private string title = "Title";
         public string Title
         {
-            get => lblTitle.Text;
+            get => title;
             set
             {
+                title = value;
                 if (value.Length > 30)
-                    lblTitle.Text = value.Substring(0, 30 - 3) + "...";
+                    lblTitle.Text = Utils.CompressString(value, 30);
                 else
                     lblTitle.Text = value;
             }
         }
 
+        private string description = "Description";
         public string Description
         {
-            get => lblDescription.Text;
+            get => description;
             set
             {
+                description = value;
                 if (value.Length > 140)
                     lblDescription.Text = value.Substring(0, 140 - 3) + "...";
                 else
@@ -53,7 +57,7 @@ namespace Mahazy
             get => currency;
             set
             {
-                Currency = value;
+                currency = value;
                 UpdatePrice();
             }
         }
@@ -72,14 +76,17 @@ namespace Mahazy
             }
         }
 
-        private string seller = "By user";
+        private string seller = "user";
         public string Seller
         {
             get => seller;
             set
             {
+                seller = value;
                 if (value.Length > 14)
-                    lblSeller.Text = "By " + value.Substring(0, 14 - 3) + "...";
+                {
+                    lblSeller.Text = "By " + Utils.CompressString(value, 14);
+                }
                 else
                     lblSeller.Text = "By " + value;
             }

@@ -46,22 +46,20 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.lblDescription.Location = new System.Drawing.Point(4, 36);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.Size = new System.Drawing.Size(232, 54);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Description";
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(304, 9);
+            this.lblPrice.Location = new System.Drawing.Point(269, 9);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(41, 16);
+            this.lblPrice.Size = new System.Drawing.Size(76, 16);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "0.00 €";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -80,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblSeller);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblDescription);
