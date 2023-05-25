@@ -21,6 +21,27 @@ namespace Mahazy.Views
             InitializeComponent();
 
             this.ctx = ctx;
+
+            var cred = Utils.ReadCredFile();
+            if (cred != null)
+            {
+                try
+                {
+                    string username = cred.Split(':')[0];
+                    string hash = cred.Split(':')[1];
+
+                    Utente u = ctx.Utente.GetUtente(new Utente() { Username = username, Password = hash });
+                    if (u != null)
+                    {
+                        Utils.ShowInfo("Logged!");
+                    } else
+                    {
+                        Utils.DeleteCredFile();
+                    }
+                }
+                catch (Exception)
+                {}
+            }
         }
 
         private void btnShow_MouseDown(object sender, MouseEventArgs e)
@@ -78,6 +99,8 @@ namespace Mahazy.Views
 
             Utils.ShowInfo("Loggato!");
             ClearLoginField();
+
+            // TODO: Switchare alla schermata dello shop
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

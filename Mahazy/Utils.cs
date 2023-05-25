@@ -67,7 +67,7 @@ namespace Mahazy
 
         public static void CreateCredFile(string username, string password)
         {
-            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+            var credPath = Path.Combine(Application.ExecutablePath.Replace("Mahazy.exe", ""), "cred.dat");
 
             if (File.Exists(credPath)) File.Delete(credPath);
 
@@ -79,14 +79,14 @@ namespace Mahazy
 
         public static void DeleteCredFile()
         {
-            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+            var credPath = Path.Combine(Application.ExecutablePath.Replace("Mahazy.exe", ""), "cred.dat");
 
             if (File.Exists(credPath)) File.Delete(credPath);
         }
 
         public static string ReadCredFile()
         {
-            var credPath = Path.Combine(Application.ExecutablePath, "cred.dat");
+            var credPath = Path.Combine(Application.ExecutablePath.Replace("Mahazy.exe", ""), "cred.dat");
 
             if (File.Exists(credPath))
             {

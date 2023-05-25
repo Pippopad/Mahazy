@@ -16,5 +16,11 @@ namespace Mahazy.Views
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Utils.DeleteCredFile();
+            // TODO: Ritornare alla schermata di login
+        }
     }
 }
