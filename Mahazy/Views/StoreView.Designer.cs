@@ -28,34 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.productComponent1 = new Mahazy.ProductComponent();
+            this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSell = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // productContainer
             // 
-            this.flowLayoutPanel1.Controls.Add(this.productComponent1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 39);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(834, 307);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // productComponent1
-            // 
-            this.productComponent1.BackColor = System.Drawing.Color.White;
-            this.productComponent1.Currency = "€";
-            this.productComponent1.CurrencyPosition = Mahazy.ProductComponent.CurrencyPos.RIGHT;
-            this.productComponent1.Description = "Get a new PS5!!! :)";
-            this.productComponent1.Location = new System.Drawing.Point(3, 3);
-            this.productComponent1.Name = "productComponent1";
-            this.productComponent1.Price = 599.99D;
-            this.productComponent1.Seller = "XX_Sella_XX";
-            this.productComponent1.Size = new System.Drawing.Size(359, 98);
-            this.productComponent1.TabIndex = 0;
-            this.productComponent1.Title = "PS5 Digital Edition";
+            this.productContainer.Location = new System.Drawing.Point(12, 39);
+            this.productContainer.Name = "productContainer";
+            this.productContainer.Size = new System.Drawing.Size(834, 307);
+            this.productContainer.TabIndex = 0;
             // 
             // btnLogout
             // 
@@ -83,19 +66,17 @@
             this.ClientSize = new System.Drawing.Size(858, 398);
             this.Controls.Add(this.btnSell);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.productContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StoreView";
             this.Text = "StoreView";
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private ProductComponent productComponent1;
+        private System.Windows.Forms.FlowLayoutPanel productContainer;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSell;
     }

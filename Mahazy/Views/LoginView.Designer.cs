@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkKeepMeLogged = new System.Windows.Forms.CheckBox();
             this.btnShowLogin = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.txtNameSignUp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.chkKeepMeLogged = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 398);
             this.panel1.TabIndex = 0;
+            // 
+            // chkKeepMeLogged
+            // 
+            this.chkKeepMeLogged.AutoSize = true;
+            this.chkKeepMeLogged.Checked = true;
+            this.chkKeepMeLogged.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkKeepMeLogged.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkKeepMeLogged.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.chkKeepMeLogged.Location = new System.Drawing.Point(85, 240);
+            this.chkKeepMeLogged.Name = "chkKeepMeLogged";
+            this.chkKeepMeLogged.Size = new System.Drawing.Size(129, 20);
+            this.chkKeepMeLogged.TabIndex = 5;
+            this.chkKeepMeLogged.Text = "Salva credenziali";
+            this.chkKeepMeLogged.UseVisualStyleBackColor = true;
             // 
             // btnShowLogin
             // 
@@ -245,18 +259,6 @@
             this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "Nome:";
-            // 
-            // chkKeepMeLogged
-            // 
-            this.chkKeepMeLogged.AutoSize = true;
-            this.chkKeepMeLogged.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkKeepMeLogged.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.chkKeepMeLogged.Location = new System.Drawing.Point(85, 240);
-            this.chkKeepMeLogged.Name = "chkKeepMeLogged";
-            this.chkKeepMeLogged.Size = new System.Drawing.Size(129, 20);
-            this.chkKeepMeLogged.TabIndex = 5;
-            this.chkKeepMeLogged.Text = "Salva credenziali";
-            this.chkKeepMeLogged.UseVisualStyleBackColor = true;
             // 
             // LoginView
             // 

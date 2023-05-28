@@ -30,5 +30,12 @@ namespace Mahazy.Views
 
             mainForm.SetActiveForm(new LoginView(mainForm, ctx));
         }
+
+        private void RefreshProductList()
+        {
+            productContainer.Controls.Clear();
+
+            // TODO: Aggiungere le query
+        }
     }
 }
