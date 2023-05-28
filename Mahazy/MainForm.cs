@@ -26,6 +26,8 @@ namespace Mahazy
 
         private DatabaseContext ctx;
 
+        private Form currentForm;
+
         public MainForm()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace Mahazy
                 Utente = new DBUtente(Utils.CONNECTION_STRING),
             };
 
-            SetActiveForm(new LoginView(ctx));
+            SetActiveForm(new LoginView(this, ctx));
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -107,11 +109,14 @@ namespace Mahazy
             }
         }
 
-        private void SetActiveForm(Form form)
+        public void SetActiveForm(Form form)
         {
+            pnlViewLoader.Controls.Clear();
             form.TopLevel = false;
             pnlViewLoader.Controls.Add(form);
             form.Show();
+
+            currentForm = form;
         }
     }
 }

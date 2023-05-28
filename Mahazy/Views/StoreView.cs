@@ -7,20 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mahazy.MainForm;
 
 namespace Mahazy.Views
 {
     public partial class StoreView : Form
     {
-        public StoreView()
+        private MainForm mainForm;
+        private DatabaseContext ctx;
+
+        public StoreView(MainForm mainForm, DatabaseContext ctx)
         {
             InitializeComponent();
+
+            this.mainForm = mainForm;
+            this.ctx = ctx;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Utils.DeleteCredFile();
-            // TODO: Ritornare alla schermata di login
+
+            mainForm.SetActiveForm(new LoginView(mainForm, ctx));
         }
     }
 }

@@ -14,14 +14,21 @@ namespace Mahazy.Views
 {
     public partial class LoginView : Form
     {
+        private MainForm mainForm;
         private DatabaseContext ctx;
 
-        public LoginView(DatabaseContext ctx)
+        public LoginView(MainForm mainForm, DatabaseContext ctx)
         {
             InitializeComponent();
 
+            this.mainForm = mainForm;
             this.ctx = ctx;
 
+            this.Load += PostLoad;
+        }
+
+        private void PostLoad(object sender, EventArgs e)
+        {
             var cred = Utils.ReadCredFile();
             if (cred != null)
             {
@@ -33,14 +40,15 @@ namespace Mahazy.Views
                     Utente u = ctx.Utente.GetUtente(new Utente() { Username = username, Password = hash });
                     if (u != null)
                     {
-                        Utils.ShowInfo("Logged!");
-                    } else
+                        mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+                    }
+                    else
                     {
                         Utils.DeleteCredFile();
                     }
                 }
                 catch (Exception)
-                {}
+                { }
             }
         }
 
@@ -100,7 +108,7 @@ namespace Mahazy.Views
             Utils.ShowInfo("Loggato!");
             ClearLoginField();
 
-            // TODO: Switchare alla schermata dello shop
+            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
