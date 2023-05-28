@@ -8,26 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Mahazy.MainForm;
 
 namespace Mahazy.Views
 {
-    public partial class LoginView : Form
+    public partial class LoginView : Form, IViewForm
     {
         private MainForm mainForm;
-        private DatabaseContext ctx;
+        private DBContext ctx;
 
-        public LoginView(MainForm mainForm, DatabaseContext ctx)
+        public LoginView(MainForm mainForm, DBContext ctx)
         {
             InitializeComponent();
 
             this.mainForm = mainForm;
             this.ctx = ctx;
-
-            this.Load += PostLoad;
         }
 
-        private void PostLoad(object sender, EventArgs e)
+        public void Init()
         {
             var cred = Utils.ReadCredFile();
             if (cred != null)
@@ -37,7 +34,7 @@ namespace Mahazy.Views
                     string username = cred.Split(':')[0];
                     string hash = cred.Split(':')[1];
 
-                    Utente u = ctx.Utente.GetUtente(new Utente() { Username = username, Password = hash });
+                    Utente u = ctx.GetUtente(new Utente() { Username = username, Password = hash });
                     if (u != null)
                     {
                         mainForm.SetActiveForm(new StoreView(mainForm, ctx));
@@ -95,7 +92,7 @@ namespace Mahazy.Views
                 return;
             }
 
-            Utente u = ctx.Utente.GetUtente(new Utente() { Username = username });
+            Utente u = ctx.GetUtente(new Utente() { Username = username });
             if (u == null || u.Password != Utils.CreateMD5(password))
             {
                 Utils.ShowError("Utente non trovato!");
@@ -172,14 +169,14 @@ namespace Mahazy.Views
 
             /////////////////////
 
-            if (ctx.Utente.GetUtente(new Utente() { Username = username }) != null)
+            if (ctx.GetUtente(new Utente() { Username = username }) != null)
             {
                 Utils.ShowError("Username già preso!");
                 FocusControl(txtUsernameLogin);
                 return;
             }
 
-            ctx.Utente.AddUtente(new Utente() { Nome = name, Cognome = surname, Username = username, Password = Utils.CreateMD5(password) });
+            ctx.AddUtente(new Utente() { Nome = name, Cognome = surname, Username = username, Password = Utils.CreateMD5(password) });
 
             Utils.ShowInfo("Account creato! Ora esegui il login.");
             ClearSignUpField();

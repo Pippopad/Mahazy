@@ -9,8 +9,8 @@ namespace Mahazy.Models
     public class Recensione
     {
         public int IdRecensione { get; set; }
-        public Utente IdUtente { get; set; }
-        public Prodotto IdProdotto { get; set; }
+        public int IdUtente { get; set; }
+        public int IdProdotto { get; set; }
         public string Contenuto { get; set; }
         public int NumeroStelle { get; set; }
     }

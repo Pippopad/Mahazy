@@ -9,7 +9,7 @@ namespace Mahazy.Models
     public class Ordina
     {
         public int IdOrdine { get; set; }
-        public Utente IdUtente { get; set; }
-        public Prodotto IdProdotto { get; set; }
+        public int IdUtente { get; set; }
+        public int IdProdotto { get; set; }
     }
 }

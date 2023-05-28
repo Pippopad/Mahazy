@@ -67,9 +67,9 @@
             // lblSeller
             // 
             this.lblSeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeller.Location = new System.Drawing.Point(229, 73);
+            this.lblSeller.Location = new System.Drawing.Point(258, 73);
             this.lblSeller.Name = "lblSeller";
-            this.lblSeller.Size = new System.Drawing.Size(125, 17);
+            this.lblSeller.Size = new System.Drawing.Size(96, 17);
             this.lblSeller.TabIndex = 3;
             this.lblSeller.Text = "By user";
             this.lblSeller.TextAlign = System.Drawing.ContentAlignment.BottomRight;

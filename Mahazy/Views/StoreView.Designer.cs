@@ -35,6 +35,7 @@
             // 
             // productContainer
             // 
+            this.productContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.productContainer.Location = new System.Drawing.Point(12, 39);
             this.productContainer.Name = "productContainer";
             this.productContainer.Size = new System.Drawing.Size(834, 307);
@@ -54,10 +55,11 @@
             // 
             this.btnSell.Location = new System.Drawing.Point(15, 363);
             this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(75, 23);
+            this.btnSell.Size = new System.Drawing.Size(91, 23);
             this.btnSell.TabIndex = 2;
-            this.btnSell.Text = "Sell";
+            this.btnSell.Text = "Vendi oggetto";
             this.btnSell.UseVisualStyleBackColor = true;
+            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             // 
             // StoreView
             // 

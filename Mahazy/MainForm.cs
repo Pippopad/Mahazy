@@ -1,5 +1,4 @@
-﻿using Mahazy.DBContext;
-using Mahazy.Views;
+﻿using Mahazy.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,15 +15,10 @@ namespace Mahazy
 {
     public partial class MainForm : Form
     {
-        public struct DatabaseContext
-        {
-            public DBUtente Utente { get; set; }
-        }
-
         private Point startPoint;
         private bool clicked;
 
-        private DatabaseContext ctx;
+        private DBContext ctx;
 
         private Form currentForm;
 
@@ -33,10 +27,7 @@ namespace Mahazy
             InitializeComponent();
 
             this.clicked = false;
-            this.ctx = new DatabaseContext()
-            {
-                Utente = new DBUtente(Utils.CONNECTION_STRING),
-            };
+            this.ctx = new DBContext(Utils.CONNECTION_STRING);
 
             SetActiveForm(new LoginView(this, ctx));
         }
@@ -109,14 +100,16 @@ namespace Mahazy
             }
         }
 
-        public void SetActiveForm(Form form)
+        public void SetActiveForm<T>(T form) where T : Form, IViewForm
         {
             pnlViewLoader.Controls.Clear();
+
             form.TopLevel = false;
             pnlViewLoader.Controls.Add(form);
             form.Show();
-
             currentForm = form;
+
+            form.Init();
         }
     }
 }

@@ -4,6 +4,6 @@
 	Nome VARCHAR(20) NOT NULL,
 	Descrizione TEXT NOT NULL,
 	Prezzo FLOAT NOT NULL,
-    Venditore INT NOT NULL FOREIGN KEY REFERENCES Utente(IdUtente),
+    IdUtente INT NOT NULL FOREIGN KEY REFERENCES Utente(IdUtente),
 	Quantita INT NOT NULL
 )

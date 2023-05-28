@@ -7,21 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Mahazy.MainForm;
 
 namespace Mahazy.Views
 {
-    public partial class StoreView : Form
+    public partial class StoreView : Form, IViewForm
     {
         private MainForm mainForm;
-        private DatabaseContext ctx;
+        private DBContext ctx;
 
-        public StoreView(MainForm mainForm, DatabaseContext ctx)
+        public StoreView(MainForm mainForm, DBContext ctx)
         {
             InitializeComponent();
 
             this.mainForm = mainForm;
             this.ctx = ctx;
+        }
+
+        public void Init()
+        {
+            RefreshProductList();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -31,11 +35,27 @@ namespace Mahazy.Views
             mainForm.SetActiveForm(new LoginView(mainForm, ctx));
         }
 
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            mainForm.SetActiveForm(new AddProductView(mainForm, ctx));
+        }
+
         private void RefreshProductList()
         {
             productContainer.Controls.Clear();
 
-            // TODO: Aggiungere le query
+            var prods = ctx.GetProdotti();
+
+            foreach (var p in prods)
+            {
+                ProductComponent pc = new ProductComponent();
+                pc.Title = p.Nome;
+                pc.Description = p.Descrizione;
+                pc.Price = p.Prezzo;
+                pc.Seller = p.Venditore.Username;
+
+                productContainer.Controls.Add(pc);
+            }
         }
     }
 }
