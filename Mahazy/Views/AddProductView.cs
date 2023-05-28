@@ -23,11 +23,35 @@ namespace Mahazy.Views
             this.ctx = ctx;
         }
 
-        public void Init() { }
+        public void Init()
+        {
+            txtPrice.Maximum = decimal.MaxValue;
+
+            previewPC.Seller = Utils.Session.Username;
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+            previewPC.Title = txtTitle.Text;
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            previewPC.Description = txtDescription.Text;
+        }
+
+        private void txtPrice_ValueChanged(object sender, EventArgs e)
+        {
+            previewPC.Price = (double)txtPrice.Value;
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
         }
     }
 }

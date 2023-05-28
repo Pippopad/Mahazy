@@ -14,6 +14,5 @@ namespace Mahazy.Models
         public float Prezzo { get; set; }
         public int IdUtente { get; set; }
         public Utente Venditore { get; set; }
-        public int Quantita { get; set; }
     }
 }

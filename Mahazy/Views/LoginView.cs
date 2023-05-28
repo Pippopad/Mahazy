@@ -37,6 +37,7 @@ namespace Mahazy.Views
                     Utente u = ctx.GetUtente(new Utente() { Username = username, Password = hash });
                     if (u != null)
                     {
+                        Utils.Session = u;
                         mainForm.SetActiveForm(new StoreView(mainForm, ctx));
                     }
                     else
@@ -105,6 +106,7 @@ namespace Mahazy.Views
             Utils.ShowInfo("Loggato!");
             ClearLoginField();
 
+            Utils.Session = u;
             mainForm.SetActiveForm(new StoreView(mainForm, ctx));
         }
 

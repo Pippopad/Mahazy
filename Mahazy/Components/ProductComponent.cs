@@ -19,8 +19,8 @@ namespace Mahazy
             set
             {
                 title = value;
-                if (value.Length > 30)
-                    lblTitle.Text = Utils.CompressString(value, 30);
+                if (value.Length > 24)
+                    lblTitle.Text = Utils.CompressString(value, 24);
                 else
                     lblTitle.Text = value;
             }

@@ -107,6 +107,7 @@ namespace Mahazy
             form.TopLevel = false;
             pnlViewLoader.Controls.Add(form);
             form.Show();
+            currentForm?.Close();
             currentForm = form;
 
             form.Init();

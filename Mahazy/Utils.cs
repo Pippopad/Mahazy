@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahazy.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Mahazy
 {
     public static class Utils
     {
+        public static Utente Session;
+
         public static string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Mahazy;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public static string CreateMD5(string input)
