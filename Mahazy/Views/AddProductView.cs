@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahazy.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,12 +38,12 @@ namespace Mahazy.Views
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
-            previewPC.Title = txtTitle.Text;
+            previewPC.Title = Utils.IsStringValid(txtTitle.Text) ? txtTitle.Text : "Titolo";
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
-            previewPC.Description = txtDescription.Text;
+            previewPC.Description = Utils.IsStringValid(txtDescription.Text) ? txtDescription.Text : "Descrizione";
         }
 
         private void txtPrice_ValueChanged(object sender, EventArgs e)
@@ -52,6 +53,45 @@ namespace Mahazy.Views
 
         private void btnSell_Click(object sender, EventArgs e)
         {
+            string title = txtTitle.Text.Trim();
+            string desc = txtDescription.Text.Trim();
+            float price = (float)txtPrice.Value;
+
+            if (!Utils.IsStringValid(title))
+            {
+                Utils.ShowError("Inserisci il titolo!");
+                FocusControl(txtTitle);
+                return;
+            }
+
+            if (!Utils.CheckStringMinLength(title, 3))
+            {
+                Utils.ShowError("Il titolo deve avere più di 3 caratteri!");
+                FocusControl(txtTitle);
+                return;
+            }
+
+            Prodotto p = new Prodotto();
+            p.Nome = title;
+            p.Descrizione = desc;
+            p.Prezzo = price;
+            p.IdUtente = Utils.Session.IdUtente;
+
+            try
+            {
+                ctx.AddProdotto(p);
+                Utils.ShowInfo("Prodotto aggiunto!");
+            }
+            catch (Exception)
+            {
+                Utils.ShowError("Qualcosa è andato storto! Riprovare più tardi :/");
+            }
+            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+        }
+
+        private void FocusControl(Control c)
+        {
+            c.Focus();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Mahazy
 
         public void AddProdotto(Prodotto p)
         {
-            db.Execute("INSERT INTO Prodotto(Nome, Descrizione, Prezzo, Venditore, Quantita) VALUES (@Nome, @Descrizione, @Prezzo, @Venditore, @Quantita)", p);
+            db.Execute("INSERT INTO Prodotto(Nome, Descrizione, Prezzo, IdUtente) VALUES (@Nome, @Descrizione, @Prezzo, @IdUtente)", p);
         }
     }
 }

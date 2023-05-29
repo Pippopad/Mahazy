@@ -30,7 +30,6 @@
         {
             this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.previewPC = new Mahazy.ProductComponent();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -39,6 +38,7 @@
             this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.btnSell = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.previewPC = new Mahazy.ProductComponent();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             this.btnBack.Location = new System.Drawing.Point(13, 13);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 0;
+            this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Indietro";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -62,20 +62,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(463, 347);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // previewPC
-            // 
-            this.previewPC.BackColor = System.Drawing.Color.White;
-            this.previewPC.Currency = "€";
-            this.previewPC.CurrencyPosition = Mahazy.ProductComponent.CurrencyPos.RIGHT;
-            this.previewPC.Description = "Descrizione";
-            this.previewPC.Location = new System.Drawing.Point(441, 138);
-            this.previewPC.Name = "previewPC";
-            this.previewPC.Price = 0D;
-            this.previewPC.Seller = "user";
-            this.previewPC.Size = new System.Drawing.Size(359, 98);
-            this.previewPC.TabIndex = 2;
-            this.previewPC.Title = "Titolo";
             // 
             // label1
             // 
@@ -92,7 +78,7 @@
             this.txtTitle.Location = new System.Drawing.Point(77, 105);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(176, 20);
-            this.txtTitle.TabIndex = 4;
+            this.txtTitle.TabIndex = 0;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // txtDescription
@@ -101,7 +87,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(176, 81);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 1;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label2
@@ -135,7 +121,7 @@
             0});
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(92, 20);
-            this.txtPrice.TabIndex = 9;
+            this.txtPrice.TabIndex = 2;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrice.ValueChanged += new System.EventHandler(this.txtPrice_ValueChanged);
             // 
@@ -144,7 +130,7 @@
             this.btnSell.Location = new System.Drawing.Point(77, 297);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(176, 23);
-            this.btnSell.TabIndex = 10;
+            this.btnSell.TabIndex = 3;
             this.btnSell.Text = "Vendi";
             this.btnSell.UseVisualStyleBackColor = true;
             this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
@@ -158,6 +144,20 @@
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Preview:";
+            // 
+            // previewPC
+            // 
+            this.previewPC.BackColor = System.Drawing.Color.White;
+            this.previewPC.Currency = "€";
+            this.previewPC.CurrencyPosition = Mahazy.ProductComponent.CurrencyPos.RIGHT;
+            this.previewPC.Description = "Descrizione";
+            this.previewPC.Location = new System.Drawing.Point(441, 138);
+            this.previewPC.Name = "previewPC";
+            this.previewPC.Price = 0D;
+            this.previewPC.Seller = "user";
+            this.previewPC.Size = new System.Drawing.Size(359, 98);
+            this.previewPC.TabIndex = 3;
+            this.previewPC.Title = "Titolo";
             // 
             // AddProductView
             // 
