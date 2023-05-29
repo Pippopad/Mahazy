@@ -33,8 +33,8 @@ namespace Mahazy
             set
             {
                 description = value;
-                if (value.Length > 140)
-                    lblDescription.Text = value.Substring(0, 140 - 3) + "...";
+                if (value.Length > 62)
+                    lblDescription.Text = Utils.CompressString(value, 62);
                 else
                     lblDescription.Text = value;
             }
@@ -91,6 +91,32 @@ namespace Mahazy
                     lblSeller.Text = "By " + value;
             }
         }
+
+        private bool showBuyRemove = false;
+
+        public bool ShowBuyRemove
+        {
+            get => showBuyRemove;
+            set
+            {
+                showBuyRemove = value;
+                btnBuyRemove.Enabled = showBuyRemove;
+                btnBuyRemove.Visible = showBuyRemove;
+            }
+        }
+
+        private bool buyView = false;
+
+        public bool BuyView
+        {
+            get => buyView;
+            set
+            {
+                buyView = value;
+                btnBuyRemove.Text = buyView ? "Buy" : "Remove";
+            }
+        }
+
 
         public ProductComponent()
         {

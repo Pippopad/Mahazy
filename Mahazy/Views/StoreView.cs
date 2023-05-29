@@ -54,6 +54,15 @@ namespace Mahazy.Views
                 pc.Price = p.Prezzo;
                 pc.Seller = p.Venditore.Username;
 
+                pc.ShowBuyRemove = true;
+                pc.BuyView = p.Venditore.Username != Utils.Session.Username;
+
+                if (p.Venditore.Username == Utils.Session.Username)
+                {
+                    pc.Seller = "you";
+                    pc.BackColor = Color.FromArgb(245, 245, 250);
+                }
+
                 productContainer.Controls.Add(pc);
             }
         }

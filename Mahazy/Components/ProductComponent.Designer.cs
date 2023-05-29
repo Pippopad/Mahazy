@@ -32,6 +32,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblSeller = new System.Windows.Forms.Label();
+            this.btnBuyRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -50,7 +51,7 @@
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.lblDescription.Location = new System.Drawing.Point(4, 36);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(232, 54);
+            this.lblDescription.Size = new System.Drawing.Size(232, 37);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Description";
             // 
@@ -66,19 +67,30 @@
             // 
             // lblSeller
             // 
+            this.lblSeller.AutoSize = true;
             this.lblSeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeller.Location = new System.Drawing.Point(258, 73);
+            this.lblSeller.Location = new System.Drawing.Point(4, 73);
             this.lblSeller.Name = "lblSeller";
-            this.lblSeller.Size = new System.Drawing.Size(96, 17);
+            this.lblSeller.Size = new System.Drawing.Size(52, 16);
             this.lblSeller.TabIndex = 3;
             this.lblSeller.Text = "By user";
-            this.lblSeller.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblSeller.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // btnBuyRemove
+            // 
+            this.btnBuyRemove.Location = new System.Drawing.Point(269, 65);
+            this.btnBuyRemove.Name = "btnBuyRemove";
+            this.btnBuyRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnBuyRemove.TabIndex = 4;
+            this.btnBuyRemove.Text = "BuyRemove";
+            this.btnBuyRemove.UseVisualStyleBackColor = true;
             // 
             // ProductComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnBuyRemove);
             this.Controls.Add(this.lblSeller);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblDescription);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblSeller;
+        private System.Windows.Forms.Button btnBuyRemove;
     }
 }

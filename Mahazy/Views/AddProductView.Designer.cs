@@ -148,6 +148,7 @@
             // previewPC
             // 
             this.previewPC.BackColor = System.Drawing.Color.White;
+            this.previewPC.BuyView = true;
             this.previewPC.Currency = "€";
             this.previewPC.CurrencyPosition = Mahazy.ProductComponent.CurrencyPos.RIGHT;
             this.previewPC.Description = "Descrizione";
@@ -155,6 +156,7 @@
             this.previewPC.Name = "previewPC";
             this.previewPC.Price = 0D;
             this.previewPC.Seller = "user";
+            this.previewPC.ShowBuyRemove = false;
             this.previewPC.Size = new System.Drawing.Size(359, 98);
             this.previewPC.TabIndex = 3;
             this.previewPC.Title = "Titolo";
