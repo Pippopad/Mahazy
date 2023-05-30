@@ -1,6 +1,8 @@
 ﻿using Mahazy.Models;
+using Mahazy.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Configuration;
@@ -17,6 +19,11 @@ namespace Mahazy
 
         public static string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Mahazy;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
+        public static Image StarFill = Resources.star_fill;
+        public static Image StarBlank = Resources.star_blank;
+
+        public static Color OwnContentBackgroundColor = Color.FromArgb(240, 240, 250);
+        
         public static string CreateMD5(string input)
         {
             using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
@@ -102,6 +109,11 @@ namespace Mahazy
             }
 
             return null;
+        }
+
+        public static void FocusControl(Control c)
+        {
+            c.Focus();
         }
     }
 }

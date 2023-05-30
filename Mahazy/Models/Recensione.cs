@@ -13,5 +13,8 @@ namespace Mahazy.Models
         public int IdProdotto { get; set; }
         public string Contenuto { get; set; }
         public int NumeroStelle { get; set; }
+
+        public Utente Autore { get; set; }
+        public Prodotto Prodotto { get; set; }
     }
 }

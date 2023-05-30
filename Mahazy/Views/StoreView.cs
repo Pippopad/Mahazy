@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahazy.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,13 @@ namespace Mahazy.Views
 
         public void Init()
         {
-            RefreshProductList();
+            lblWelcome.Text = $"Benvenuto {Utils.Session.Nome} {Utils.Session.Cognome} ({Utils.Session.Username})";
+            RefreshProductsList();
+        }
+
+        private void btnMyOrders_Click(object sender, EventArgs e)
+        {
+            mainForm.SetActiveForm(new OrdersView(mainForm, ctx));
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -40,25 +47,27 @@ namespace Mahazy.Views
             mainForm.SetActiveForm(new AddProductView(mainForm, ctx));
         }
 
-        private void RefreshProductList()
+        private void RefreshProductsList()
         {
             productContainer.Controls.Clear();
 
-            var prods = ctx.GetProdotti();
+            var prods = ctx.GetProdottiAvailable();
 
             foreach (var p in prods)
             {
                 ProductComponent pc = new ProductComponent();
+                pc.Prodotto = p;
                 pc.Title = p.Nome;
                 pc.Description = p.Descrizione;
                 pc.Price = p.Prezzo;
                 pc.Seller = p.Venditore.Username;
-                pc.Prodotto = p;
+                pc.Amount = p.Quantita;
 
                 if (p.Venditore.Username == Utils.Session.Username)
                 {
-                    pc.BackColor = Color.FromArgb(240, 240, 250);
-                    pc.Seller = "you";
+                    pc.BackColor = Utils.OwnContentBackgroundColor;
+                    pc.ShowRemove = true;
+                    pc.OnRemoveClicked += RemoveProduct;
                 }
 
                 pc.Click += OnProductClick;
@@ -69,7 +78,13 @@ namespace Mahazy.Views
 
         private void OnProductClick(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new DetailView(mainForm, ctx, p));
+            mainForm.SetActiveForm(new DetailsView(mainForm, ctx, (sender as ProductComponent).Prodotto));
+        }
+
+        private void RemoveProduct(object sender, EventArgs e)
+        {
+            ctx.RemoveProdotto((sender as ProductComponent).Prodotto);
+            RefreshProductsList();
         }
     }
 }

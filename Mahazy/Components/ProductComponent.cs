@@ -13,6 +13,8 @@ namespace Mahazy
 {
     public partial class ProductComponent : UserControl
     {
+        public event EventHandler OnRemoveClicked;
+
         public Prodotto Prodotto { get; set; }
 
         private string title = "Title";
@@ -95,9 +97,47 @@ namespace Mahazy
             }
         }
 
+        private bool showRemove = false;
+        public bool ShowRemove
+        {
+            get => showRemove;
+            set
+            {
+                showRemove = value;
+                if (ShowRemove)
+                {
+                    btnRemove.Enabled = true;
+                    btnRemove.Visible = true;
+                    lblSeller.Visible = false;
+                    lblSeller.Enabled = false;
+                }
+                else
+                {
+                    btnRemove.Enabled = false;
+                    btnRemove.Visible = false;
+                    lblSeller.Visible = true;
+                    lblSeller.Enabled = true;
+                }
+            }
+        }
+
+        private int amount = 1;
+        public int Amount
+        {
+            get => amount;
+            set
+            {
+                amount = value;
+                lblAmt.Text = $"Quantità: {Amount}";
+            }
+        }
+
         public ProductComponent()
         {
             InitializeComponent();
+
+            WireAllControls(this);
+            btnRemove.Click -= ctl_Click;
         }
 
         private void UpdatePrice()
@@ -106,6 +146,28 @@ namespace Mahazy
                 lblPrice.Text = $"{Currency} {Price.ToString("0.00")}";
             else
                 lblPrice.Text = $"{Price.ToString("0.00")} {Currency}";
+        }
+
+        private void WireAllControls(Control cont)
+        {
+            foreach (Control ctl in cont.Controls)
+            {
+                ctl.Click += ctl_Click;
+                if (ctl.HasChildren)
+                {
+                    WireAllControls(ctl);
+                }
+            }
+        }
+
+        private void ctl_Click(object sender, EventArgs e)
+        {
+            this.InvokeOnClick(this, EventArgs.Empty);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            OnRemoveClicked.Invoke(this, new EventArgs());
         }
     }
 }

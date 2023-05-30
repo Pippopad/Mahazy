@@ -11,5 +11,8 @@ namespace Mahazy.Models
         public int IdOrdine { get; set; }
         public int IdUtente { get; set; }
         public int IdProdotto { get; set; }
+
+        public Utente Utente { get; set; }
+        public Prodotto Prodotto { get; set; }
     }
 }

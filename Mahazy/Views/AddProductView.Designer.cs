@@ -38,9 +38,12 @@
             this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.btnSell = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtAmt = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.previewPC = new Mahazy.ProductComponent();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmt)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -127,7 +130,7 @@
             // 
             // btnSell
             // 
-            this.btnSell.Location = new System.Drawing.Point(77, 297);
+            this.btnSell.Location = new System.Drawing.Point(77, 343);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(176, 23);
             this.btnSell.TabIndex = 3;
@@ -145,25 +148,64 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Preview:";
             // 
+            // txtAmt
+            // 
+            this.txtAmt.Location = new System.Drawing.Point(77, 317);
+            this.txtAmt.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtAmt.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtAmt.Name = "txtAmt";
+            this.txtAmt.Size = new System.Drawing.Size(92, 20);
+            this.txtAmt.TabIndex = 12;
+            this.txtAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAmt.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtAmt.ValueChanged += new System.EventHandler(this.txtAmt_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(73, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Quantità:";
+            // 
             // previewPC
             // 
+            this.previewPC.Amount = 1;
             this.previewPC.BackColor = System.Drawing.Color.White;
             this.previewPC.Currency = "€";
             this.previewPC.CurrencyPosition = Mahazy.ProductComponent.CurrencyPos.RIGHT;
-            this.previewPC.Description = "Descrizione";
+            this.previewPC.Description = "Description";
             this.previewPC.Location = new System.Drawing.Point(441, 138);
             this.previewPC.Name = "previewPC";
             this.previewPC.Price = 0D;
+            this.previewPC.Prodotto = null;
             this.previewPC.Seller = "user";
             this.previewPC.Size = new System.Drawing.Size(359, 98);
-            this.previewPC.TabIndex = 3;
-            this.previewPC.Title = "Titolo";
+            this.previewPC.TabIndex = 14;
+            this.previewPC.Title = "Title";
             // 
             // AddProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 398);
+            this.Controls.Add(this.previewPC);
+            this.Controls.Add(this.txtAmt);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSell);
             this.Controls.Add(this.txtPrice);
@@ -172,7 +214,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.previewPC);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -180,6 +221,7 @@
             this.Text = "AddProductView";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +231,6 @@
 
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ProductComponent previewPC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtDescription;
@@ -198,5 +239,8 @@
         private System.Windows.Forms.NumericUpDown txtPrice;
         private System.Windows.Forms.Button btnSell;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown txtAmt;
+        private System.Windows.Forms.Label label5;
+        private ProductComponent previewPC;
     }
 }

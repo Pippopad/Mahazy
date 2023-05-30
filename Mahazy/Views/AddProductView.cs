@@ -27,8 +27,9 @@ namespace Mahazy.Views
         public void Init()
         {
             txtPrice.Maximum = decimal.MaxValue;
+            txtAmt.Maximum = decimal.MaxValue;
 
-            previewPC.Seller = Utils.Session.Username;
+            previewPC.Seller = "you";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -51,23 +52,28 @@ namespace Mahazy.Views
             previewPC.Price = (double)txtPrice.Value;
         }
 
+        private void txtAmt_ValueChanged(object sender, EventArgs e)
+        {
+            previewPC.Amount = (int)txtAmt.Value;
+        }
+
         private void btnSell_Click(object sender, EventArgs e)
         {
             string title = txtTitle.Text.Trim();
             string desc = txtDescription.Text.Trim();
             float price = (float)txtPrice.Value;
+            int amount = (int)txtAmt.Value;
 
             if (!Utils.IsStringValid(title))
             {
                 Utils.ShowError("Inserisci il titolo!");
-                FocusControl(txtTitle);
+                Utils.FocusControl(txtTitle);
                 return;
             }
-
-            if (!Utils.CheckStringMinLength(title, 3))
+            if (!Utils.CheckStringLength(title, 3, 64))
             {
-                Utils.ShowError("Il titolo deve avere più di 3 caratteri!");
-                FocusControl(txtTitle);
+                Utils.ShowError("Il nome può avere dai 3 ai 64 caratteri!");
+                Utils.FocusControl(txtTitle);
                 return;
             }
 
@@ -75,6 +81,7 @@ namespace Mahazy.Views
             p.Nome = title;
             p.Descrizione = desc;
             p.Prezzo = price;
+            p.Quantita = amount;
             p.IdUtente = Utils.Session.IdUtente;
 
             try
@@ -87,11 +94,6 @@ namespace Mahazy.Views
                 Utils.ShowError("Qualcosa è andato storto! Riprovare più tardi :/");
             }
             mainForm.SetActiveForm(new StoreView(mainForm, ctx));
-        }
-
-        private void FocusControl(Control c)
-        {
-            c.Focus();
         }
     }
 }

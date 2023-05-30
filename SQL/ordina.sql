@@ -1,6 +1,6 @@
 ﻿CREATE TABLE Ordina
 (
-	IdOrdina INT PRIMARY KEY IDENTITY,
+	IdOrdine INT PRIMARY KEY IDENTITY,
 	IdUtente INT FOREIGN KEY REFERENCES Utente(IdUtente),
 	IdProdotto INT FOREIGN KEY REFERENCES Prodotto(IdProdotto)
 )

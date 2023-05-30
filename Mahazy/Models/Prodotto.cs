@@ -13,6 +13,8 @@ namespace Mahazy.Models
         public string Descrizione { get; set; }
         public float Prezzo { get; set; }
         public int IdUtente { get; set; }
+        public int Quantita { get; set; }
+
         public Utente Venditore { get; set; }
     }
 }
