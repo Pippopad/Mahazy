@@ -1,0 +1,9 @@
+﻿CREATE TABLE Prodotto
+(
+	IdProdotto INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
+	Nome VARCHAR(64) NOT NULL,
+	Descrizione TEXT NOT NULL,
+	Prezzo FLOAT NOT NULL,
+    IdUtente INT NOT NULL FOREIGN KEY REFERENCES Utente(IdUtente),
+	Quantita INT NOT NULL
+)
