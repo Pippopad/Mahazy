@@ -53,9 +53,23 @@ namespace Mahazy.Views
                 pc.Description = p.Descrizione;
                 pc.Price = p.Prezzo;
                 pc.Seller = p.Venditore.Username;
+                pc.Prodotto = p;
+
+                if (p.Venditore.Username == Utils.Session.Username)
+                {
+                    pc.BackColor = Color.FromArgb(240, 240, 250);
+                    pc.Seller = "you";
+                }
+
+                pc.Click += OnProductClick;
 
                 productContainer.Controls.Add(pc);
             }
+        }
+
+        private void OnProductClick(object sender, EventArgs e)
+        {
+            mainForm.SetActiveForm(new DetailView(mainForm, ctx, p));
         }
     }
 }

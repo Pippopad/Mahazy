@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahazy.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Mahazy
 {
     public partial class ProductComponent : UserControl
     {
+        public Prodotto Prodotto { get; set; }
+
         private string title = "Title";
         public string Title
         {
