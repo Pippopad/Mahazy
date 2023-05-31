@@ -133,7 +133,7 @@
             this.btnSell.Location = new System.Drawing.Point(77, 343);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(176, 23);
-            this.btnSell.TabIndex = 3;
+            this.btnSell.TabIndex = 4;
             this.btnSell.Text = "Vendi";
             this.btnSell.UseVisualStyleBackColor = true;
             this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
@@ -163,7 +163,7 @@
             0});
             this.txtAmt.Name = "txtAmt";
             this.txtAmt.Size = new System.Drawing.Size(92, 20);
-            this.txtAmt.TabIndex = 12;
+            this.txtAmt.TabIndex = 3;
             this.txtAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAmt.Value = new decimal(new int[] {
             1,
@@ -194,8 +194,10 @@
             this.previewPC.Price = 0D;
             this.previewPC.Prodotto = null;
             this.previewPC.Seller = "user";
+            this.previewPC.ShowRemove = false;
             this.previewPC.Size = new System.Drawing.Size(359, 98);
             this.previewPC.TabIndex = 14;
+            this.previewPC.TabStop = false;
             this.previewPC.Title = "Title";
             // 
             // AddProductView

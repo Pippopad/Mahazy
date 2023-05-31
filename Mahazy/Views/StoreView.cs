@@ -26,25 +26,25 @@ namespace Mahazy.Views
 
         public void Init()
         {
-            lblWelcome.Text = $"Benvenuto {Utils.Session.Nome} {Utils.Session.Cognome} ({Utils.Session.Username})";
+            lblWelcome.Text = $"Benvenuto, {Utils.Session.Nome} {Utils.Session.Cognome} ({Utils.Session.Username})";
             RefreshProductsList();
         }
 
         private void btnMyOrders_Click(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new OrdersView(mainForm, ctx));
+            mainForm.SetActiveView(new OrdersView(mainForm, ctx));
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Utils.DeleteCredFile();
 
-            mainForm.SetActiveForm(new LoginView(mainForm, ctx));
+            mainForm.SetActiveView(new LoginView(mainForm, ctx));
         }
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new AddProductView(mainForm, ctx));
+            mainForm.SetActiveView(new AddProductView(mainForm, ctx));
         }
 
         private void RefreshProductsList()
@@ -78,7 +78,7 @@ namespace Mahazy.Views
 
         private void OnProductClick(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new DetailsView(mainForm, ctx, (sender as ProductComponent).Prodotto));
+            mainForm.SetActiveView(new DetailsView(mainForm, ctx, (sender as ProductComponent).Prodotto));
         }
 
         private void RemoveProduct(object sender, EventArgs e)

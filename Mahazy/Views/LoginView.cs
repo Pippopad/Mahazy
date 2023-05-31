@@ -38,7 +38,7 @@ namespace Mahazy.Views
                     if (u != null)
                     {
                         Utils.Session = u;
-                        mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+                        mainForm.SetActiveView(new StoreView(mainForm, ctx));
                     }
                     else
                     {
@@ -107,7 +107,7 @@ namespace Mahazy.Views
             ClearLoginField();
 
             Utils.Session = u;
-            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+            mainForm.SetActiveView(new StoreView(mainForm, ctx));
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
