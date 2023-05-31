@@ -32,7 +32,7 @@ namespace Mahazy.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+            mainForm.SetActiveView(new StoreView(mainForm, ctx));
         }
 
         private void RefreshOrdersList()
@@ -59,7 +59,7 @@ namespace Mahazy.Views
 
         private void OnOrderClick(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new DetailsView(mainForm, ctx, (sender as OrderComponent).Ordina.Prodotto));
+            mainForm.SetActiveView(new DetailsView(mainForm, ctx, (sender as OrderComponent).Ordina.Prodotto));
         }
     }
 }

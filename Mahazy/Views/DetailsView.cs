@@ -42,7 +42,7 @@ namespace Mahazy.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+            mainForm.SetActiveView(new StoreView(mainForm, ctx));
         }
 
         private void btnReview_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Mahazy.Views
                 ctx.UpdateProdotto(prodotto);
                 ctx.AddOrdine(new Ordina { IdUtente = Utils.Session.IdUtente, IdProdotto = prodotto.IdProdotto });
                 Utils.ShowInfo("Acquistato!");
-                mainForm.SetActiveForm(new DetailsView(mainForm, ctx, prodotto));
+                mainForm.SetActiveView(new DetailsView(mainForm, ctx, prodotto));
             }
             else
             {

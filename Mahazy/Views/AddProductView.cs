@@ -34,7 +34,7 @@ namespace Mahazy.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+            mainForm.SetActiveView(new StoreView(mainForm, ctx));
         }
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Mahazy.Views
             {
                 Utils.ShowError("Qualcosa è andato storto! Riprovare più tardi :/");
             }
-            mainForm.SetActiveForm(new StoreView(mainForm, ctx));
+            mainForm.SetActiveView(new StoreView(mainForm, ctx));
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Mahazy
             this.clicked = false;
             this.ctx = new DBContext(Utils.CONNECTION_STRING);
 
-            SetActiveForm(new LoginView(this, ctx));
+            SetActiveView(new LoginView(this, ctx));
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -100,7 +100,7 @@ namespace Mahazy
             }
         }
 
-        public void SetActiveForm<T>(T form) where T : Form, IViewForm
+        public void SetActiveView<T>(T form) where T : Form, IViewForm
         {
             pnlViewLoader.Controls.Clear();
 
