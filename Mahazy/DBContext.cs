@@ -71,7 +71,7 @@ namespace Mahazy
 
         public List<Recensione> GetRecensioni(Prodotto p)
         {
-            var reviews = db.Query<Recensione, Utente, Prodotto, Recensione>("SELECT * FROM Recensione R INNER JOIN Utente U ON R.IdUtente = U.IdUtente INNER JOIN Prodotto P ON R.IdProdotto = P.IdProdotto WHERE P.IdProdotto=@IdProdotto ORDER BY IdRecensione DESC", (review, user, product) =>
+            var reviews = db.Query<Recensione, Utente, Prodotto, Recensione>("SELECT * FROM Recensione R INNER JOIN Utente U ON R.IdUtente = U.IdUtente INNER JOIN Prodotto P ON R.IdProdotto = P.IdProdotto WHERE P.IdProdotto=@IdProdotto", (review, user, product) =>
             {
                 review.Autore = user;
                 review.Prodotto = product;

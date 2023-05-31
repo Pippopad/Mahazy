@@ -34,9 +34,9 @@ namespace Mahazy.Components
             {
                 title = value;
                 if (value.Length > 14)
-                    lblTitle.Text = "Titolo: " + value.Substring(0, 14 - 3) + $"... ({Ordina.IdProdotto})";
+                    lblTitle.Text = "Titolo: " + value.Substring(0, 14 - 3) + $"... (ID: {Ordina.IdProdotto})";
                 else
-                    lblTitle.Text = "Titolo: " + value;
+                    lblTitle.Text = "Titolo: " + value + $" (ID: { Ordina.IdProdotto})";
             }
         }
 

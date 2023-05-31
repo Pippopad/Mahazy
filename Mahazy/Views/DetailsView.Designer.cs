@@ -114,6 +114,7 @@
             // 
             // reviewsContainer
             // 
+            this.reviewsContainer.AutoScroll = true;
             this.reviewsContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.reviewsContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.reviewsContainer.Location = new System.Drawing.Point(362, 42);
