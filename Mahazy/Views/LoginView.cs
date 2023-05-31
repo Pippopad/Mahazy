@@ -162,7 +162,7 @@ namespace Mahazy.Views
                 Utils.FocusControl(txtPasswordSignUp);
                 return;
             }
-            if (!Utils.CheckStringMinLength(name, 3))
+            if (!Utils.CheckStringMinLength(password, 3))
             {
                 Utils.ShowError("La password deve avere più di 3 caratteri!");
                 Utils.FocusControl(txtPasswordSignUp);
